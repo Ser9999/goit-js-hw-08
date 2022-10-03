@@ -6,10 +6,10 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 const LOCALSTORAGE_KEY = 'videoplayer-current-time';
 
-const currentTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+const setCurrentTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
-if (currentTime) {
-  player.setCurrentTime(currentTime);
+if (setCurrentTime) {
+  player.setCurrentTime(setCurrentTime);
 }
 
 player.on('timeupdate', throttle(timeSave, 1000));
